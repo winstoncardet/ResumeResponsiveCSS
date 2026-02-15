@@ -1,0 +1,153 @@
+:root {
+  --bg: #0f172a;
+  --card: #111c33;
+  --text: #e5e7eb;
+  --muted: #b7c0d1;
+  --border: rgba(255, 255, 255, 0.12);
+  --link: #7dd3fc;
+  --linkHover: #a5f3fc;
+  --radius: 14px;
+  --pad: 16px;
+  --max: 980px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.45;
+}
+
+a { color: var(--link); }
+a:hover { color: var(--linkHover); }
+
+.page {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.site-header {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.header-top h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+}
+
+.contact p {
+  margin: 0;
+  color: var(--muted);
+  font-style: normal;
+}
+
+.sep { padding: 0 10px; }
+
+.site-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.site-nav a {
+  text-decoration: none;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.site-nav a[aria-current="page"] {
+  background: rgba(125, 211, 252, 0.2);
+}
+
+.content {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--pad);
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.job { margin-top: 12px; }
+
+.job-head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.job-date {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.site-footer {
+  margin-top: 16px;
+  padding: 12px 0 2px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .page {
+    max-width: 1200px;
+    padding: 28px;
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+
+  .site-header {
+    position: sticky;
+    top: 18px;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .content {
+    margin-top: 0;
+    gap: 16px;
+  }
+
+  .job-head {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
